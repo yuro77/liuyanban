@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0">
+    <link href="liuyanban.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div class="backgroundpagetwobox">
+        <img src="背景1.jpg" class="backgroundpagetwo">
+    </div>
+    <a href="用户登陆.html" class="fontthree">返回</a>
+    <fieldset class="fieldset1">
+        <legend class="font">登陆</legend>
+        <div class="loginboxone">
+            <label class="font" for="username1">用户名:</label>&nbsp;&nbsp;&nbsp;<input type="text" class="inputone"
+                id="username1" placeholder="小明" name="username1">
+        </div>
+        <div class="loginboxtwo">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <span class="font">密码:</span>&nbsp;&nbsp;&nbsp;
+            <input type="password" class="inputone" id="password1">
+        </div>
+        <div class="pagetwoBoxone"><input class="buttontwo" type="button" value="登陆" onclick="postLogin()"></div>
+    </fieldset>
+    <fieldset class="fieldset2">
+        <legend class="font">注册</legend>
+        <div class="registerboxone">
+            <label class="font" for="username2">用户名:</label>&nbsp;&nbsp;&nbsp;<input type="text" class="inputone"
+                id="username2" placeholder="如小明" name="username2">
+        </div>
+        <div class="registerboxtwo">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <span class="font">密码:</span>&nbsp;&nbsp;&nbsp;
+            <input type="password" class="inputone" id="password2">
+        </div>
+        <div class="registerboxthree">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <span class="font">性别:</span>&nbsp;&nbsp;&nbsp;
+            <input type="text" class="inputtwo" id="sex">
+            <span class="font">年龄:</span>&nbsp;&nbsp;&nbsp;
+            <input type="text" class="inputtwo" id="age">
+        </div>
+        <div class="registerboxfour">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <span class="font">地址:</span>&nbsp;&nbsp;&nbsp;
+            <input type="text" class="inputone" id="address">
+        </div>
+        <div class="pagetwoBoxtwo"><input class="buttontwo" type="button" value="注册" onclick="postRegister()"></div>
+    </fieldset>
+    <div class="messageboxone">
+        <p id="loginmsg" class="msgfont"></p>
+    </div>
+    <div class="messageboxtwo">
+        <p id="registermsg" class="msgfont"></p>
+    </div>
+</body>
+<script src="liuyanban.js"></script>
+            

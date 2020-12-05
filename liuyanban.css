@@ -1,0 +1,347 @@
+.body{
+    margin: 0;
+    padding: 0;
+}
+.backgroundpageone{
+    background-repeat: no-repeat;
+}
+.pageoneBoxone{
+    position: relative;
+    left:19.1vw ;
+    top:45vh ;
+    width:61.8vw ;
+    height:18vh;
+}
+.pageoneBoxtwo{
+    position: relative;
+    left: 19.1vw;
+    top: 45vh;
+    width: 61.8vw;
+    height:18vh;
+}
+.buttonone {
+    width: 61.8vw;
+    height: 10vh;
+    border-radius: 2vw;
+    outline: none;
+    text-align:center;
+    
+    background-color: transparent;
+    border-color: darkolivegreen;
+    font-size: xxx-large;
+}
+.buttonone:hover{
+    background-color: rgba(173, 223, 247, 0.945);
+    color: white;
+}
+/*.login {
+    width: 61.8vw;
+    height: 90vw;
+    position: relative;
+    top: 0;
+    left: 19.1vw;
+    align-items: center; 
+    background-color: rgba(173, 223, 247, 0.945);
+    border: none;
+    display: block;
+    border-radius: 6vw;
+    z-index: 2;
+}*/
+.loginboxone {
+    position: relative;
+    left: 7vw;
+    top: 3vh;
+    /* width: 20vw; */
+    height: 10vh;
+    /* padding-top: 0; */
+}
+.loginboxtwo {
+    position: absolute;
+    left: 7vw;
+    top: 30vw;
+   
+    height: 10vh;
+}
+
+.inputone {
+    width: 20vw;
+    height: 7vw;
+    border-radius: 5vw;
+    border: none;
+    outline: none;
+    padding-left: 3vw;
+    padding-top: 0;
+    font-size: 3vw;
+}
+.inputtwo {
+    width: 10vw;
+    height: 7vw;
+    border-radius: 5vw;
+    border: none;
+    outline: none;
+    padding-left: 3vw;
+    padding-top: 0;
+    font-size: 3vw;
+}
+.inputthree {
+    width: 20vw;
+    height: 7vw;
+    border-radius: 5vw;
+    border: 2vw;
+    outline: none;
+    padding-left: 3vw;
+    padding-top: 0;
+    font-size: 3vw;
+    background-color: rgba(173, 223, 247, 0.945);
+}
+.inputfour {
+    width: 10vw;
+    height: 7vw;
+    border-radius: 5vw;
+    border: 2vw;
+    outline: none;
+    padding-left: 3vw;
+    padding-top: 0;
+    font-size: 3vw;
+    background-color: rgba(173, 223, 247, 0.945);
+}
+.inputfive{
+    width: 80vw;
+    border-radius: 5vw;
+    background-color: silver;
+    padding-left: 3vw;
+    font-size: 4vw;
+}
+.font {
+    font-size: 4vw;
+}
+
+.fieldset1{
+    position: relative;
+    top: 10vh;
+    left: 16vw;
+    border-radius: 2vw;
+    border-width: 1vw;
+    width: 61.8vw;
+    height: 28vh;
+}
+.registerboxone{
+    position: absolute;
+    top: 10vw;
+    left: 7vw;
+
+}
+.registerboxtwo{
+    position: absolute;
+    top: 11vh;
+    left: 7vw;
+}
+.registerboxthree{
+    position: absolute;
+    top: 16vh;
+    left: 7vw;
+}
+.registerboxfour{
+    position: absolute;
+    top: 21vh;
+    left: 7vw;
+    z-index: 1;
+}
+
+
+.fieldset2{
+    top: 41.8vw;
+    left: 16vw;
+    position: relative;
+    border-radius: 2vw;
+    border-width: 1vw;
+    width: 61.8vw;
+    height: 28vh;
+}
+.messageboxone{
+    width: 60vw;
+    height: 5vh;
+    position: absolute;
+    top: 34vh;
+    left: 22vw;
+}
+.messageboxtwo{
+    width: 60vw;
+    height: 5vh;
+    position: absolute;
+    top: 78vh;
+    left: 22vw;   
+}
+.pagetwoBoxone{
+    position: absolute;
+    top:32vh;
+    left:13vw;
+}
+.pagetwoBoxtwo{
+    position: absolute;
+    top:32vh;
+    left:13vw;
+}
+.backgroundpagetwobox{
+    position: absolute;
+    top: 9vh;
+    transform: translate(-1vw);
+    width:100%;
+}
+
+.backgroundpagetwo{
+    width: 100vw; 
+    height: 100vh;  
+}
+.buttontwo {
+    width: 38.2vw;
+    height: 5vh;
+    border-radius: 2vw;
+    outline: none;
+    text-align:center;
+    
+    background-color: transparent;
+    border-color: darkolivegreen;
+    font-size: xxx-large;
+}
+.buttontwo:hover{
+    background-color: white;   
+}
+.msgfont{
+    font-weight: bold;
+    color: white;
+    font-size: xxx-large;
+}
+.header{
+    width: 100vw;
+    background-color:rgba(173, 223, 247, 0.945);
+    font-size: xx-large;
+    text-align: center;
+    padding-top: 1vh;
+}
+.pagethreeBoxone{
+    position: absolute;
+    bottom: 0;
+    width: 100vw;
+    height:;
+    background-color:rgba(173, 223, 247, 0.945);
+    text-align: center;
+    padding-top: 2vh;
+    z-index: 2;
+}
+.fonttwo{
+    font-size: xxx-large;
+    padding: 3vh;
+}
+.fonttwo:hover{
+    color: white;
+}
+.personalDatabox{
+    width: 100vw;
+    display:none;
+}
+.personalDataboxone{
+    position: absolute;
+    top: 15vh;
+    left:14.1vw;
+}
+.personalDataboxtwo{
+    position: absolute;
+    top: 25vh;
+    left:19.1vw;
+}
+.personalDataboxthree{
+    position: absolute;
+    top:35vh ;
+    left:19.1vw;
+}
+.personalDataboxfour{
+    position: absolute;
+    top: 45vh;
+    left:19.1vw;
+}
+.displayBox{
+    width: 100vw;
+    display: block;
+    overflow: scroll;
+    height: 75vh;
+}
+.displayBoxone{
+    width: 100vw;
+    height: 12vh;
+}
+.displaytext{
+    border-radius: 5vw;
+    background-color: rgba(173, 223, 247, 0.945);
+    width:70vw ;
+    padding-left: 3vw;
+    font-size: 4vw;
+    outline: none;
+}
+.mydisplaytext{
+    border-radius: 5vw;
+    background-color: rgba(173, 223, 247, 0.945);
+    width:70vw ;
+    padding-left: 3vw;
+    font-size: 4vw;
+    outline: none;
+}
+
+.displaytextBox{
+    position: relative;
+    left:10vw;
+    top: 3vw;
+}
+.usernameAndtime{
+    width: 100vw;
+}
+.hr{
+    border-width: 0.25vw;
+    position: relative;
+    top: 2vh;
+}
+.tipBox{
+    width: 100vw;
+    height: 7vh;
+    display: block;
+}
+.displayBoxtwo{
+    width: 100vw;
+    height: 12vh;
+    display:none;
+}
+.displayBoxthree{
+    width: 100vw;
+    height: 12vh;
+    display:none;
+}
+.fontthree{
+    font-size: xxx-large;
+    padding: 3vh;
+}
+.fontthree:hover{
+    color: rgba(173, 223, 247, 0.945);
+}
+.modifytextBox{
+    display: ;
+    position: relative;
+    bottom: ;
+    background-color: rgba(173, 223, 247, 0.945);
+    position: absolute;
+    
+    width: 100vw;
+    bottom: 8vh;
+}
+.modifytextBox:hover{
+    height: 15vh;
+    transform: all 0.5s;
+}
+.inputfive{
+    height: 15vh;
+    transform: all 0.5s;
+    
+}
+.finish{
+    display: none;
+    font-size: xx-large;
+}

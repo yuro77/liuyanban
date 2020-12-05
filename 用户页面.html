@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0">
+    <link href="liuyanban.css" rel="stylesheet" type="text/css">
+</head>
+<body class="body">
+    <div class="header"><h1>留言板</h1><span id="finish" class="finish" onclick="finish()">完成</span></div>
+    
+    <div class="pagethreeBoxone">
+        <div class="motifytextBox" id="motifytextBox"><!--修改留言-->
+            <textarea cols="3" class="inputfive" placeholder="限字" 
+            ></textarea>
+        </div>
+        <span class="fonttwo" onclick="page()">首页</span> 
+        <span class="fonttwo">|</span> 
+        <span class="fonttwo" onclick="personalData()">个人信息</span>
+    </div>
+    <div id="personalDatabox" class="personalDatabox"><!--个人信息-->
+        <div class="personalDataboxone" >
+            <span class="fonttwo">用户名:</span>&nbsp;&nbsp;&nbsp;
+            <input type="text" class="inputthree" id="username3">
+        </div>
+        <div class="personalDataboxtwo" >
+            <span class="fonttwo">性别:</span>&nbsp;&nbsp;&nbsp;
+            <input type="text" class="inputfour" id="sex1">
+        </div>
+        <div class="personalDataboxthree" >
+            <span class="fonttwo">年龄:</span>&nbsp;&nbsp;&nbsp;
+            <input type="text" class="inputfour" id="age1">
+        </div>
+        <div class="personalDataboxfour" >
+            <span class="fonttwo">地址:</span>&nbsp;&nbsp;&nbsp;
+            <input type="text" class="inputthree" id="address1">
+        </div>
+        
+    </div>
+    <div id="displayBox" class="displayBox"><!--首页-->
+        <div class="displayBoxone">
+            <div class="usernameAndtime">
+                <span class="font">小猫她姐</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <span class="font">12-1</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <span class="font">17:48</span>
+            </div>
+            <div class="displaytextBox"><textarea cols="3" class="displaytext" readonly="readonly"
+                >你们写完作业了吗？</textarea>
+            </div>
+            <hr class="hr">
+        </div>
+        <div class="displayBoxone">
+            <div class="usernameAndtime">
+                <span class="font">小猫她妹</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <span class="font">12-1</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <span class="font">18:01</span>
+            </div>
+            <div class="displaytextBox"><textarea cols="3" class="displaytext" readonly="readonly" 
+                >你们看了嫦娥5号没有，好厉害的样子</textarea>
+            </div>
+            <hr class="hr">
+        </div>
+        <div class="displayBoxone">
+            <div class="usernameAndtime">
+                <span class="font">小猫</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <span class="font">12-1</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <span class="font">18:37</span>
+            </div>
+            <div class="displaytextBox"><textarea cols="3" class="displaytext" readonly="readonly" 
+                >你们不要被名字误导，我跟她们一点关系都没有</textarea>
+            </div>
+            <hr class="hr">
+        </div>
+        <div class="displayBoxone">
+            <div class="usernameAndtime">
+                <span class="font">小猫她姐</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <span class="font">12-1</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <span class="font">18:40</span>
+            </div>
+            <div class="displaytextBox"><textarea cols="3" class="displaytext" readonly="readonly" 
+               >看了看了，说是要登陆采样，不过只带回两克土壤，这也太少了吧</textarea>
+            </div>
+            <hr class="hr">
+        </div>
+        <div class="displayBoxone">
+            <div class="usernameAndtime">
+                <span class="font">小猫她妹</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <span class="font">12-1</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <span class="font">18:41</span>
+            </div>
+            <div class="displaytextBox"><textarea cols="3" class="displaytext" readonly="readonly" 
+                >大姐，我感觉我跟你无法沟通</textarea>
+            </div>
+            <hr class="hr">
+        </div>
+        <div class="displayBoxone">
+            <div class="usernameAndtime">
+                <span class="font">小猫她姐</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <span class="font">12-1</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <span class="font">18:41</span>
+            </div>
+            <div class="displaytextBox"><textarea cols="3" class="displaytext" readonly="readonly" 
+                >咋的了，我说的又有问题了，我好歹是你姐，知不知道什么叫“尊老"</textarea>
+            </div>
+            <hr class="hr">
+        </div>
+        <div class="displayBoxone">
+            <div class="usernameAndtime">
+                <span class="font">糖果</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <span class="font">12-1</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <span class="font">18:42</span>
+            </div>
+            <div class="displaytextBox"><textarea cols="3" class="displaytext" readonly="readonly" 
+                >小猫不出来说两句？</textarea>
+            </div>
+            <hr class="hr">
+        </div>
+        <div class="displayBoxone">
+            <div class="usernameAndtime">
+                <span class="font">小猫</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <span class="font">12-1</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <span class="font">18:44</span>
+            </div>
+            <div class="displaytextBox"> 
+                <textarea cols="3" class="displaytext" readonly="readonly"
+                >我都说了，我跟她们一丁点关系都没有，真的不认识她们</textarea>
+            </div>
+            <hr class="hr">
+        </div>
+        <div class="tipBox" id="tipBox">
+            <span class="fontthree">想看更多内容请</span class="fontthree"><a href="登陆注册.html" class="fontthree">登陆</a>
+        </div>
+        <div class="displayBoxtwo"><!--登陆后才看到的页面-->
+            <div class="usernameAndtime">
+                <span class="font">大白兔</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <span class="font">12-1</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <span class="font">18:45</span>
+            </div>
+            <div class="displaytextBox"> 
+                <textarea cols="3" class="displaytext" readonly="readonly"
+                >那小猫她姐和小猫她妹是什么关系</textarea>
+            </div>
+            <hr class="hr">
+        </div>
+        <div class="displayBoxthree">
+            <div class="usernameAndtime">
+                <span class="font">我</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <span class="font">12-1</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <span class="font">18:45</span>
+            </div>
+            <div class="displaytextBox"> 
+                <textarea cols="3" class="displaytext" readonly="readonly"
+                >听起来是她们是双胞胎</textarea>
+            </div>
+            <hr class="hr">
+        </div>
+        <div class="displayBoxtwo">
+            <div class="usernameAndtime">
+                <span class="font">小黑</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <span class="font">12-1</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <span class="font">18:49</span>
+            </div>
+            <div class="displaytextBox"> 
+                <textarea cols="3" class="displaytext" readonly="readonly"
+                >还有没有写完！！！打算天台上见了</textarea>
+            </div>
+            <hr class="hr">
+        </div>
+        <div class="displayBoxtwo">
+            <div class="usernameAndtime">
+                <span class="font">小猫她妹</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <span class="font">12-1</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <span class="font">18:50</span>
+            </div>
+            <div class="displaytextBox"> 
+                <textarea cols="3" class="displaytext" readonly="readonly"
+                >就比我早出生一分钟也好意思叫我“尊老”</textarea>
+            </div>
+            <hr class="hr">
+        </div>
+        <div class="displayBoxtwo">
+            <div class="usernameAndtime">
+                <span class="font">小猫她妹</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <span class="font">12-1</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <span class="font">18:50</span>
+            </div>
+            <div class="displaytextBox"> 
+                <textarea cols="3" class="displaytext" readonly="readonly"
+                >我们是双胞胎，小猫是我们家猫</textarea>
+            </div>
+            <hr class="hr">
+        </div>
+        <div class="displayBoxtwo">
+            <div class="usernameAndtime">
+                <span class="font">我</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <span class="font">12-1</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <span class="font">18:50</span>
+            </div>
+            <div class="displaytextBox"> 
+                <textarea cols="3" class="mydisplaytext" readonly="readonly"
+                >你们这这也太敷衍了，我都替你们家猫委屈</textarea>
+                <span class="fontthree" onclick="motifytext()"> 修改</span>
+            </div>
+            
+            <hr class="hr">
+        </div>
+   
+    </div>
+    
+</body>
+<script src="liuyanban.js"></script>
