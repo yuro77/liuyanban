@@ -77,9 +77,13 @@ function postRegister(){
 
 }
 function personalData(){
-  document.getElementById('displayBox').style.display="none"
-  document.getElementById('personalDatabox').style.display="block"}
-  document.getElementById("motifytextBox").style.display="none";
+  if( document.getElementById('loginmsg').innerHTML!='登陆成功'){
+    alert("登录成功后才可以查看个人信息")
+  }
+  else{
+  document.getElementById('displayBox').style.display="none";
+  document.getElementById('personalDatabox').style.display="block";
+  document.getElementById("motifytextBox").style.display="none";}}
 
 function page(){
   document.getElementById('personalDatabox').style.display="none";
