@@ -9,14 +9,16 @@ else
    postRequest = new ActiveXObject("Microsoft.XMLHTTP");
    getRequest = new ActiveXObject("Microsoft.XMLHTTP");
   }
-var a= 0;
 var BaseURL ='http://127.0.0.1:5000/';
 
 function postloginsend(){
     console.log("登陆的账号和密码已发送")
   }
 function postLogin(){
-  var username1 = document.getElementById("username1").value;
+  if(document.getElementById("username1").value== undefined || document.getElementById("password1").value== undefined){
+    document.getElementById('loginmsg').innerHTML='请输入用户名或密码' 
+  }
+  else {var username1 = document.getElementById("username1").value;
   var password1 = document.getElementById("password1").value;
   var postData1 = {
     username: username1,
@@ -37,7 +39,8 @@ function postLogin(){
     else {
       document.getElementById('loginmsg').innerHTML='用户名或密码错误';
     }
-  }
+  }}
+  
 }
 
 
