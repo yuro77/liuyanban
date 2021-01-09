@@ -10,7 +10,7 @@ else
    getRequest = new ActiveXObject("Microsoft.XMLHTTP");
   }
 var BaseURL ='http://127.0.0.1:5000/';
-
+var a = 0;
 function postloginsend(){
     console.log("登陆的账号和密码已发送")
   }
@@ -35,6 +35,7 @@ function postLogin(){
       document.getElementsByClassName('displayBoxtwo').style.display="block";
       document.getElementsByClassName('displayBoxthree').style.display="block";
       getpersonalData()
+      a=1
     }
     else {
       document.getElementById('loginmsg').innerHTML='用户名或密码错误';
@@ -77,13 +78,13 @@ function postRegister(){
 
 }
 function personalData(){
-  if( document.getElementById('loginmsg').innerHTML!='登陆成功'){
+  if(a != 1){
     alert("登录成功后才可以查看个人信息")
   }
   else{
   document.getElementById('displayBox').style.display="none";
-  document.getElementById('personalDatabox').style.display="block";
-  document.getElementById("motifytextBox").style.display="none";}}
+  document.getElementById('personalDatabox').style.display="block";}}
+  document.getElementById("motifytextBox").style.display="none";
 
 function page(){
   document.getElementById('personalDatabox').style.display="none";
