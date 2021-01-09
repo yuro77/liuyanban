@@ -202,7 +202,7 @@
     
     background-color: transparent;
     border-color: darkolivegreen;
-    font-size: xxx-large;
+    font-size: 4vw;
 }
 .buttontwo:hover{
     background-color: white;   
@@ -210,7 +210,7 @@
 .msgfont{
     font-weight: bold;
     color: white;
-    font-size: xxx-large;
+    font-size: 4vw;
 }
 .header{
     width: 100vw;
@@ -230,7 +230,7 @@
     z-index: 2;
 }
 .fonttwo{
-    font-size: xxx-large;
+    font-size: 4vw;
     padding: 3vh;
 }
 .fonttwo:hover{
@@ -316,7 +316,7 @@
     display:none;
 }
 .fontthree{
-    font-size: xxx-large;
+    font-size: 4vw;
     padding: 3vh;
 }
 .fontthree:hover{
