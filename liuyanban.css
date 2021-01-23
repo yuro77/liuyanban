@@ -71,7 +71,7 @@
     outline: none;
     padding-left: 3vw;
     padding-top: 0;
-    font-size: 3vw;
+    font-size: 4vw;
 }
 .inputtwo {
     width: 10vw;
@@ -81,7 +81,7 @@
     outline: none;
     padding-left: 3vw;
     padding-top: 0;
-    font-size: 3vw;
+    font-size: 4vw;
 }
 .inputthree {
     width: 20vw;
@@ -102,7 +102,7 @@
     outline: none;
     padding-left: 3vw;
     padding-top: 0;
-    font-size: 3vw;
+    font-size: 4vw;
     background-color:rgba(209, 160, 210, 0.35);
 }
 .inputfive{
