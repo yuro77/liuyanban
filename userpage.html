@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0">
+    <link href="liuyanban.css" rel="stylesheet" type="text/css">
+</head>
+
+<body class="body">
+    <div class="header">
+        <!--页眉部分-->
+        <div><span class="header1">留言板</span><span id="finish" class="finish" onclick="finish()">完成</span></div>
+        <div style="text-align: right;position: absolute;right: 0;top: 3vh;">
+            <span class="header2">欢迎~</span><span class="header2" id="pageusername">用户名</span>
+            <span class="header2">|</span><span class="header2" onclick="refreshComment()">刷新</span>
+            <span class="header2">|</span><span class="header2" onclick="trythings()">尝试</span>
+        </div>
+    </div>
+    <div class="postmytextBox" id="postmytextBox">
+        <!--发表留言-->
+        <span class="header2">写下你的留言吧~~</span>
+        <textarea cols="52" wrap="hard" wrap="hard" class="inputfive" placeholder="限字" id="writeMytext"></textarea>
+        <span class="header2" onclick="postmytext()" style="position:relative;top: 7vw;">完成</span>
+    </div>
+    <div class="pagethreeBoxone">
+        <div style="display: flex;">
+            <span class="fonttwo" onclick="page()">首页</span>
+            <span class="fonttwo">|</span>
+            <span class="fonttwo" onclick="personalData()">个人信息</span>
+            <span class="fonttwo">|</span>
+            <span class="fonttwo" onclick="postmytextpage()">发表留言</span>
+        </div>
+    </div>
+    <div id="personalDatabox" class="personalDatabox" onload="refreshComment()">
+        <!--个人信息-->
+        <div class="personalDataboxone">
+            <span class="fonttwo">用户名:</span>&nbsp;&nbsp;&nbsp;
+            <input type="text" class="inputthree" id="username3" disabled="disabled">
+        </div>
+        <div class="personalDataboxtwo">
+            <span class="fonttwo">性别:</span>&nbsp;&nbsp;&nbsp;
+            <input type="text" class="inputfour" id="sex1" disabled="disabled">
+        </div>
+        <div class="personalDataboxthree">
+            <span class="fonttwo">年龄:</span>&nbsp;&nbsp;&nbsp;
+            <input type="text" class="inputfour" id="age1" disabled="disabled">
+        </div>
+        <div class="personalDataboxfour">
+            <span class="fonttwo">地址:</span>&nbsp;&nbsp;&nbsp;
+            <input type="text" class="inputthree" id="address1" disabled="disabled">
+        </div>
+        <div style="position: absolute;top: 54vh;left: 31vw;" onclick="personalDataChange()">
+            <input class="buttontwo" type="button" value="修改信息" id="personalDataChange" onclick="personalDataChange()">
+            <input class="buttontwo" type="button" value="完成" style="display: none;" id="personalDataChangeFinish"
+                onclick="personalDataChangeFinish()">
+        </div>
+        <div style="position: absolute;top: 65vh;left: 41vw;">
+            <span class="header2" onclick="changePassword()">修改密码</span>
+        </div>
+
+    </div>
+    <div id="changePasswordPage" class="changePasswordPageBox">
+        <!--修改密码页面-->
+        <div style="position: absolute;top: 15vh;">
+            <span class="fonttwo">输入旧密码：</span>
+            <input type="text" class="inputthree" id="oldPassword">
+        </div>
+        <div style="position: absolute;top: 25vh;">
+            <span class="fonttwo">输入新密码：</span>
+            <input type="text" class="inputthree" id="newPassword">
+        </div>
+        <input class="buttontwo" style="position: absolute;top: 35vh;left: 30vw;" type="button" value="完成" onclick="finishPasswordChange()">
+    </div>
+    <div id="displayBox" class="displayBox" id="box0">
+        <!--首页-->
+        <div class="displayBoxone">
+            <div class="usernameAndtime">
+                <ul style="list-style: none;">
+                    <li><span class="font name">小猫她姐</span></li>
+                    <li><span class="font">12-1</span> </li>
+                    <li><span class="font">17:48</span></li>
+                    <li><span class="font" style="visibility: hidden;" onclick="motifyText('textarea0')">修改</span></li>
+                    <li><span class="font" style="visibility: hidden;" onclick="finishmotifyText('box0')">完成</span></li>
+
+                    <li><span class="font" style="visibility: hidden;" onclick="deleteText('box0')">删除</span></li>
+                </ul>
+
+            </div>
+            <div class="displaytextBox"><textarea cols="52" wrap="hard" wrap="hard" class="displaytext" disabled="disabled"
+                    id="textarea0">你们写完作业了吗？</textarea>
+            </div>
+            <hr class="hr">
+        </div>
+        <div class="displayBoxone" id="box1">
+            <div class="usernameAndtime">
+                <ul style="list-style: none;">
+                    <li><span class="font">小猫她妹</span></li>
+                    <li><span class="font">12-1</span></li>
+                    <li><span class="font">18:01</span></li>
+                    <li><span class="font" style="visibility: hidden;" onclick="motifyText('textarea1')">修改</span></li>
+                    <li><span class="font" style="visibility: hidden;" onclick="finishmotifyText('box1')">完成</span></li>
+
+                    <li><span class="font" style="visibility: hidden;" onclick="deleteText('box1')">删除</span></li>
+                </ul>
+            </div>
+            <div class="displaytextBox"><textarea cols="52" wrap="hard" wrap="hard" class="displaytext" disabled="disabled"
+                    id='textarea1'>你们看了嫦娥5号没有，好厉害的样子</textarea>
+            </div>
+            <hr class="hr">
+        </div>
+        <div class="displayBoxone" id="box2">
+            <div class="usernameAndtime">
+                <ul style="list-style: none;">
+                    <li><span class="font">小猫</span></li>
+                    <li><span class="font">12-1</span></li>
+                    <li><span class="font">18:37</span></li>
+                    <li><span class="font" style="visibility: hidden;" onclick="motifyText('textarea2')">修改</span></li>
+                    <li><span class="font" style="visibility: hidden;" onclick="finishmotifyText('box2')">完成</span></li>
+
+                    <li><span class="font" style="visibility: hidden;" onclick="deleteText('box2')">删除</span></li>
+                </ul>
+            </div>
+            <div class="displaytextBox"><textarea cols="52" wrap="hard" wrap="hard" class="displaytext" disabled="disabled"
+                    id='textarea2'>你们不要被名字误导，我跟她们一点关系都没有</textarea>
+            </div>
+            <hr class="hr">
+        </div>
+        <div class="displayBoxone" id="box3">
+            <div class="usernameAndtime">
+                <ul style="list-style: none;">
+                    <li><span class="font">小猫她姐</span></li>
+                    <li><span class="font">12-1</span></li>
+                    <li><span class="font">18:40</span></li>
+                    <li><span class="font" style="visibility: hidden;" onclick="motifyText('textarea3')">修改</span></li>
+                    <li><span class="font" style="visibility: hidden;" onclick="deleteText('box3')">删除</span></li>
+                    <li><span class="font" style="visibility: hidden;" onclick="finishmotifyText('box3')">完成</span></li>
+
+                    
+                </ul>
+            </div>
+            <div class="displaytextBox"><textarea cols="52" wrap="hard" wrap="hard" class="displaytext" disabled="disabled"
+                    id='textarea3'>看了看了，说是要登陆采样，不过只带回两克土壤，这也太少了吧</textarea>
+            </div>
+            <hr class="hr">
+        </div>
+        <div class="displayBoxone" id="box4">
+            <div class="usernameAndtime">
+                <ul style="list-style: none;">
+                    <li><span class="font">小猫她妹</span></li>
+                    <li><span class="font">12-1</span></li>
+                    <li><span class="font">18:41</span></li>
+                    <li><span class="font" style="visibility: hidden;" onclick="motifyText('textarea4')">修改</span></li>
+                    <li><span class="font" style="visibility: hidden;" onclick="deleteText('box4')">删除</span></li>
+                    <li><span class="font" style="visibility: hidden;" onclick="finishmotifyText('box4')">完成</span></li>
+
+                    
+                </ul>
+            </div>
+            <div class="displaytextBox"><textarea cols="52" wrap="hard" wrap="hard" class="displaytext" disabled="disabled"
+                    id='textarea4'>大姐，我感觉我跟你无法沟通</textarea>
+            </div>
+            <hr class="hr">
+        </div>
+        <div class="displayBoxone" id="box5">
+            <div class="usernameAndtime">
+                <ul style="list-style: none;">
+                    <li><span class="font">小猫她姐</span></li>
+                    <li><span class="font">12-1</span></li>
+                    <li><span class="font">18:41</span></li>
+                    <li><span class="font" style="visibility: hidden;" onclick="motifyText('textarea5')">修改</span></li>
+                    
+                    <li><span class="font" style="visibility: hidden;" onclick="deleteText('box5')">删除</span></li>
+                    <li><span class="font" style="visibility: hidden;" onclick="finishmotifyText('box5')">完成</span></li>
+                </ul>
+            </div>
+            <div class="displaytextBox"><textarea cols="52" wrap="hard" wrap="hard" class="displaytext" disabled="disabled"
+                    id='textarea5'>咋的了，我说的又有问题了，我好歹是你姐，知不知道什么叫“尊老"</textarea>
+            </div>
+            <hr class="hr">
+        </div>
+        <div class="displayBoxone" id="box6">
+            <div class="usernameAndtime">
+                <ul style="list-style: none;">
+                    <li><span class="font">糖果</span></li>
+                    <li><span class="font">12-1</span></li>
+                    <li><span class="font">18:42</span></li>
+                    <li><span class="font" style="visibility: hidden;" onclick="motifyText('textarea6')">修改</span></li>
+                    
+                    <li><span class="font" style="visibility: hidden;" onclick="deleteText('box6')">删除</span></li>
+                    <li><span class="font" style="visibility: hidden;" onclick="finishmotifyText('box6')">完成</span></li>
+                </ul>
+            </div>
+            <div class="displaytextBox"><textarea cols="52" wrap="hard" wrap="hard" class="displaytext" disabled="disabled"
+                    id='textarea6'>小猫不出来说两句？</textarea>
+            </div>
+            <hr class="hr">
+        </div>
+        <div class="displayBoxone" id="box7">
+            <div class="usernameAndtime">
+                <ul style="list-style: none;">
+                    <li><span class="font">小猫</span></li>
+                    <li><span class="font">12-1</span></li>
+                    <li><span class="font">18:44</span></li>
+                    <li><span class="font" style="visibility: hidden;" onclick="motifyText('textarea7')">修改</span></li>
+                    <li><span class="font" style="visibility: hidden;" onclick="deleteText('box7')">删除</span></li>
+                    <li><span class="font" style="visibility: hidden;" onclick="finishmotifyText('box7')">完成</span></li>
+
+                </ul>
+            </div>
+            <div class="displaytextBox">
+                <textarea cols="52" wrap="hard" wrap="hard" class="displaytext" disabled="disabled"
+                    id='textarea7'>我都说了，我跟她们一丁点关系都没有，真的不认识她们</textarea>
+            </div>
+            <hr class="hr">
+        </div>
+
+        <div class="displayBoxone" id="box8">
+            <div class="usernameAndtime">
+                <ul style="list-style: none;">
+                    <li><span class="font">大白兔</span></li>
+                    <li><span class="font">12-1</span></li>
+                    <li><span class="font">18:45</span></li>
+                    <li><span class="font" style="visibility: hidden;" onclick="motifyText('textarea8')">修改</span></li>
+                    <li><span class="font" style="visibility: hidden;" onclick="deleteText('box8')">删除</span></li>
+                    <li><span class="font" style="visibility: hidden;" onclick="finishmotifyText('box8')">完成</span></li>
+                </ul>
+            </div>
+            <div class="displaytextBox">
+                <textarea cols="52" wrap="hard" wrap="hard" class="displaytext" disabled="disabled" id='textarea8'>那小猫她姐和小猫她妹是什么关系</textarea>
+            </div>
+            <hr class="hr">
+        </div>
+        <div class="displayBoxone" id="box9">
+            <div class="usernameAndtime">
+                <ul style="list-style: none;">
+                    <li><span class="font">hg001</span></li>
+                    <li><span class="font">12-1</span></li>
+                    <li><span class="font">18:45</span></li>
+                    <li><span class="font" style="visibility: hidden;" onclick="motifyText('textarea9')">修改</span></li>
+                    <li><span class="font" style="visibility: hidden;" onclick="deleteText('box9')">删除</span></li>
+                    <li><span class="font" style="visibility: hidden;" onclick="finishmotifyText('box9')">完成</span></li>
+                </ul>
+            </div>
+            <div class="displaytextBox">
+                <textarea cols="52" wrap="hard" wrap="hard" class="displaytext" disabled="disabled" id='textarea9'>听起来是她们是双胞胎</textarea>
+            </div>
+            <hr class="hr">
+        </div>
+        <div class="displayBoxone" id="box10">
+            <div class="usernameAndtime">
+                <ul style="list-style: none;">
+                    <li><span class="font">小黑</span></li>
+                    <li><span class="font">12-1</span></li>
+                    <li><span class="font">18:49</span></li>
+                    <li><span class="font" style="visibility: hidden;" onclick="motifyText('textarea10')">修改</span></li>
+                    <li><span class="font" style="visibility: hidden;" onclick="deleteText('box10')">删除</span></li>
+                    <li><span class="font" style="visibility: hidden;" onclick="finishmotifyText('box10')">完成</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="displaytextBox">
+                <textarea cols="52" wrap="hard" wrap="hard" class="displaytext" disabled="disabled" id='textarea10'>还有没有写完！！！打算天台上见了</textarea>
+            </div>
+            <hr class="hr">
+        </div>
+        <div class="displayBoxone" id="box11">
+            <div class="usernameAndtime">
+                <ul style="list-style: none;">
+                    <li><span class="font">小猫她妹</span></li>
+                    <li><span class="font">12-1</span></li>
+                    <li><span class="font">18:50</span></li>
+                    <li><span class="font" style="visibility: hidden;" onclick="motifyText('textarea11')">修改</span></li>
+                    <li><span class="font" style="visibility: hidden;" onclick="deleteText('box11')">删除</span></li>
+                    <li><span class="font" style="visibility: hidden;" onclick="finishmotifyText('box11')">完成</span>    
+                    </li>
+                </ul>
+            </div>
+            <div class="displaytextBox">
+                <textarea cols="52" wrap="hard" wrap="hard" class="displaytext" disabled="disabled"
+                    id='textarea11'>就比我早出生一分钟也好意思叫我“尊老”</textarea>
+            </div>
+            <hr class="hr">
+        </div>
+        <div class="displayBoxone" id="box12">
+            <div class="usernameAndtime">
+                <ul style="list-style: none;">
+                    <li><span class="font">小猫她妹</span></li>
+                    <li><span class="font">12-1</span></li>
+                    <li><span class="font">18:50</span></li>
+                    <li><span class="font" style="visibility: hidden;" onclick="motifyText('textarea12')">修改</span></li>
+                    <li><span class="font" style="visibility: hidden;" onclick="deleteText('box12')">删除</span></li>
+                    <li><span class="font" style="visibility: hidden;" onclick="finishmotifyText('box12')">完成</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="displaytextBox">
+                <textarea cols="52" wrap="hard" wrap="hard" class="displaytext" id="textarea12" disabled="disabled">我们是双胞胎，小猫是我们家猫</textarea>
+            </div>
+            <hr class="hr">
+        </div>
+        <div class="displayBoxone" id="box13">
+            <div class="usernameAndtime">
+                <ul style="list-style: none;">
+                    <li><span class="font">hg001</span></li>
+                    <li><span class="font">12-1</span></li>
+                    <li><span class="font">18:50</span></li>
+                    <li><span class="font" style="visibility: hidden;" onclick="motifyText('textarea13')">修改</span></li>
+                    <li><span class="font" style="visibility: hidden;" onclick="deleteText('box13')">删除</span></li>
+                    <li><span class="font" style="visibility: hidden;" onclick="finishmotifyText('box13')">完成</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="displaytextBox">
+                <textarea cols="52" wrap="hard" class="mydisplaytext" disabled="disabled" wrap=""
+                    id='textarea13'>你们这这也太敷衍了，我都替你们家猫委屈</textarea>
+            </div>
+
+            <hr class="hr">
+        </div>
+
+    </div>
+    <div class="msgfontBox" id="msgfontBox">
+        <span  id="msg">看得见我吗？
+        </span>
+
+    </div>
+
+</body>
+<script src="liuyanban.js"></script>

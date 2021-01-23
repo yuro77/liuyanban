@@ -31,7 +31,7 @@
     font-size:4vw;
 }
 .buttonone:hover{
-    background-color: rgba(173, 223, 247, 0.945);
+    background-color: rgba(209, 160, 210, 0.35);
     color: white;
 }
 /*.login {
@@ -49,7 +49,7 @@
 }*/
 .loginboxone {
     position: relative;
-    left: 7vw;
+    left: 5vw;
     top: 3vh;
     /* width: 20vw; */
     height: 10vh;
@@ -91,8 +91,8 @@
     outline: none;
     padding-left: 3vw;
     padding-top: 0;
-    font-size: 3vw;
-    background-color: rgba(173, 223, 247, 0.945);
+    font-size: 4vw;
+    background-color:rgba(209, 160, 210, 0.35);
 }
 .inputfour {
     width: 10vw;
@@ -103,14 +103,17 @@
     padding-left: 3vw;
     padding-top: 0;
     font-size: 3vw;
-    background-color: rgba(173, 223, 247, 0.945);
+    background-color:rgba(209, 160, 210, 0.35);
 }
 .inputfive{
-    width: 80vw;
+    width: 58vw;
     border-radius: 5vw;
     background-color: silver;
     padding-left: 3vw;
     font-size: 4vw;
+    position: relative;
+    top: 5vw;
+
 }
 .font {
     font-size: 4vw;
@@ -118,12 +121,24 @@
 
 .fieldset1{
     position: relative;
-    top: 10vh;
-    left: 16vw;
+    top: 3vh;
+    left: 18vw;
     border-radius: 2vw;
     border-width: 1vw;
     width: 61.8vw;
     height: 28vh;
+    background-color: rgba(209, 160, 210, 0.35);
+}
+.postmytextBox{
+    position: relative;
+    top: 3vh;
+    left: 18vw;
+    border-radius: 2vw;
+    border-width: 1vw;
+    width: 61.8vw;
+    height: 28vh;
+    background-color: rgba(209, 160, 210, 0.35);
+    display: none;  
 }
 .registerboxone{
     position: absolute;
@@ -150,20 +165,22 @@
 
 
 .fieldset2{
-    top: 41.8vw;
+    top: 35vw;
     left: 16vw;
     position: relative;
     border-radius: 2vw;
     border-width: 1vw;
     width: 61.8vw;
-    height: 28vh;
+    height: 30vh;
+    background-color: rgba(209, 160, 210, 0.35);
 }
 .messageboxone{
     width: 60vw;
     height: 5vh;
     position: absolute;
-    top: 34vh;
-    left: 22vw;
+    top: 20vh;
+  
+    text-align: center;
 }
 .messageboxtwo{
     width: 60vw;
@@ -174,7 +191,7 @@
 }
 .pagetwoBoxone{
     position: absolute;
-    top:32vh;
+    top:34vh;
     left:13vw;
 }
 .pagetwoBoxtwo{
@@ -200,8 +217,8 @@
     outline: none;
     text-align:center;
     
-    background-color: transparent;
-    border-color: darkolivegreen;
+    background-color:rgba(209, 160, 210, 0.35);
+    border-color: rgb(156, 161, 148);
     font-size: 4vw;
 }
 .buttontwo:hover{
@@ -209,29 +226,39 @@
 }
 .msgfont{
     font-weight: bold;
-    color: white;
+    color:black;
     font-size: 4vw;
 }
 .header{
     width: 100vw;
-    background-color:rgba(173, 223, 247, 0.945);
-    font-size: xx-large;
-    text-align: center;
+    background-color:rgba(209, 160, 210, 0.35);
     padding-top: 1vh;
+    padding-bottom: 3vh;
+    display: flex;
+}
+.header1{
+    padding-left: 2vh;
+    font-size: 8vw;
+    font-weight: bold;
+}
+.header2{
+    font-size: 5vw;
+    font-weight: bold;
 }
 .pagethreeBoxone{
     position: absolute;
     bottom: 0;
     width: 100vw;
-    height:;
-    background-color:rgba(173, 223, 247, 0.945);
+    background-color:rgba(209, 160, 210, 0.35);
     text-align: center;
-    padding-top: 2vh;
+    
     z-index: 2;
+    display: flex;
 }
 .fonttwo{
-    font-size: 4vw;
+    font-size: 5vw;
     padding: 3vh;
+    font-weight: bold;
 }
 .fonttwo:hover{
     color: white;
@@ -264,32 +291,31 @@
     width: 100vw;
     display: block;
     overflow: scroll;
-    height: 75vh;
+    height: 79vh;
 }
 .displayBoxone{
     width: 100vw;
-    height: 12vh;
+    display: flex;
 }
 .displaytext{
     border-radius: 5vw;
-    background-color: rgba(173, 223, 247, 0.945);
+    background-color: rgba(209, 160, 210, 0.35);
     width:70vw ;
     padding-left: 3vw;
-    font-size: 4vw;
+    font-size: 3vw;
     outline: none;
 }
 .mydisplaytext{
     border-radius: 5vw;
-    background-color: rgba(173, 223, 247, 0.945);
+    background-color: rgba(209, 160, 210, 0.35);
     width:70vw ;
     padding-left: 3vw;
-    font-size: 4vw;
+    font-size: 3vw;
     outline: none;
 }
 
 .displaytextBox{
     position: relative;
-    left:10vw;
     top: 3vw;
 }
 .usernameAndtime{
@@ -304,11 +330,13 @@
     width: 100vw;
     height: 7vh;
     display: block;
+    text-align: center;
 }
 .displayBoxtwo{
     width: 100vw;
     height: 12vh;
     display:none;
+    
 }
 .displayBoxthree{
     width: 100vw;
@@ -320,13 +348,13 @@
     padding: 3vh;
 }
 .fontthree:hover{
-    color: rgba(173, 223, 247, 0.945);
+    color:rgba(209, 160, 210, 0.35);
 }
 .modifytextBox{
     display: ;
     position: relative;
     bottom: ;
-    background-color: rgba(173, 223, 247, 0.945);
+    background-color:rgba(209, 160, 210, 0.35);
     position: absolute;
     
     width: 100vw;
@@ -344,4 +372,30 @@
 .finish{
     display: none;
     font-size: xx-large;
+}
+.thelink{
+    color: black;
+}
+.the-ul{
+    list-style: none;
+}
+.font1{
+    font-size: 4vw;
+    visibility: hidden;
+}
+.msgfontBox{
+    border-radius: 2vw;
+    position: absolute;
+    top: 35vh;
+    background-color: silver;
+    font-weight: bold;
+    font-size: 6vw;
+    padding-left: 3vw;
+    left: 30vw;
+    
+    
+}
+.changePasswordPageBox{
+   display: none; 
+   width: 100vw;
 }
