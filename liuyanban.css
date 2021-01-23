@@ -323,8 +323,7 @@
 }
 .hr{
     border-width: 0.25vw;
-    position: relative;
-    top: 2vh;
+    color: beige;
 }
 .tipBox{
     width: 100vw;

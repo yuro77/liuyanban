@@ -80,7 +80,7 @@ function admit() {//允许登陆用户修改和删除留言
   if(postData1.username==""){
     for(e=0;e <= d;e++){
       document.getElementsByClassName("displayBoxone")[b].children[0].children[0].children[3].children[0].style.visibility = "visible";
-        document.getElementsByClassName("displayBoxone")[b].children[0].children[0].children[4].children[0].style.visibility = "visible"
+      document.getElementsByClassName("displayBoxone")[b].children[0].children[0].children[4].children[0].style.visibility = "visible"
     }
   }
 
@@ -239,7 +239,11 @@ function refreshComment() {//刷新留言列表
         console.log("请求刷新成功")
         boxnumber = getRequest.responseText.length - 1;
         for (c = 0; c <= boxnumber; c++) {
-          getRequest.responseText[c][3]
+          
+          var hr = document.createElement('hr')
+          hr.className = "hr"
+          document.getElementById("displayBox").appendChild(hr)
+
           var newTextBox = document.createElement('div');
           newTextBox.id = "box" + JSON.stringify(c);
           newTextBox.className = "displayBoxone"
@@ -328,9 +332,7 @@ function refreshComment() {//刷新留言列表
           newTextTwoTextarea.id = textareaNumber
           newTextTwoTextarea.innerText = getRequest.responseText[c][1]
           newTextBoxtwo.appendChild(newTextTwoTextarea)//
-          var hr = document.createElement('hr')
-          hr.className = "hr"
-          newTextBox.appendChild(hr)
+          
         }
         console.log("刷新成功")
 
@@ -369,6 +371,10 @@ function postmytext() {/*把要发表的留言发送*/
             document.getElementById('displayBox').style.display = "block";
             document.getElementById("postmytextBox").style.display = "none";
             /*创建一个新标签*/
+            var hr = document.createElement('hr')
+            hr.className = "hr"
+            document.getElementById("displayBox").appendChild(hr)
+
             var newTextBox = document.createElement('div');
             newTextBox.id = "box" + JSON.stringify(boxnumber);
             newTextBox.className = "displayBoxone"
@@ -448,10 +454,7 @@ function postmytext() {/*把要发表的留言发送*/
             newTextTwoTextare.innerTexta = postedText/*发表的留言*/
             newTextTwoTextarea.id = textareaNumber
             newTextBoxtwo.appendChild(newTextTwoTextarea)
-            var hr = document.createElement('hr')
-            hr.className = "hr"
-            newTextBox.appendChild(hr)
-
+            
           }
           else {
             console.log(postRequest.responseText)
