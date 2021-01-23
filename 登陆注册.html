@@ -7,12 +7,10 @@
     <link href="liuyanban.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-    <div class="backgroundpagetwobox">
-        <img src="背景1.jpg" class="backgroundpagetwo">
-    </div>
-    <a href="用户登陆.html" class="fontthree">返回</a>
+    <div class="header"><span class="header1">留言板</span></div>
     <fieldset class="fieldset1">
         <legend class="font">登陆</legend>
+
         <div class="loginboxone">
             <label class="font" for="username1">用户名:</label>&nbsp;&nbsp;&nbsp;<input type="text" class="inputone"
                 id="username1" placeholder="小明" name="username1">
@@ -36,16 +34,13 @@
             <input type="password" class="inputone" id="password2">
         </div>
         <div class="registerboxthree">
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <span class="font">性别:</span>&nbsp;&nbsp;&nbsp;
-            <input type="text" class="inputtwo" id="sex">
-            <span class="font">年龄:</span>&nbsp;&nbsp;&nbsp;
-            <input type="text" class="inputtwo" id="age">
-        </div>
-        <div class="registerboxfour">
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <span class="font">地址:</span>&nbsp;&nbsp;&nbsp;
-            <input type="text" class="inputone" id="address">
+            <ul style="list-style: none;">
+            <li><span class="font">性别:</span>&nbsp;&nbsp;&nbsp;
+            <input type="text" class="inputtwo" id="sex"></li>
+            <li><span class="font">年龄:</span>&nbsp;&nbsp;&nbsp;
+            <input type="text" class="inputtwo" id="age"></li>
+            <li><span class="font">地址:</span>&nbsp;&nbsp;&nbsp;
+            <input type="text" class="inputone" id="address"></li></ul>
         </div>
         <div class="pagetwoBoxtwo"><input class="buttontwo" type="button" value="注册" onclick="postRegister()"></div>
     </fieldset>
