@@ -76,7 +76,13 @@ function admit() {//允许登陆用户修改和删除留言
     }
 
   }
-
+  /*管理员账号*/
+  if(postData1.username==""){
+    for(e=0;e <= d;e++){
+      document.getElementsByClassName("displayBoxone")[b].children[0].children[0].children[3].children[0].style.visibility = "visible";
+        document.getElementsByClassName("displayBoxone")[b].children[0].children[0].children[4].children[0].style.visibility = "visible"
+    }
+  }
 
 }//
 
