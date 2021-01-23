@@ -392,7 +392,7 @@
     font-size: 6vw;
     padding-left: 3vw;
     left: 30vw;
-    
+    display: none;
     
 }
 .changePasswordPageBox{

@@ -31,7 +31,7 @@ function postLogin() {//用户登录
         console.log(postRequest.responseText)
         document.getElementById('loginmsg').innerHTML = '登陆成功';
         document.getElementById('tipBox').style.display = "none";
-        window.location.href = "/userpage.html";/*要检查一下这行代码是否可行 */
+        window.location.href = "./userpage.html";/*要检查一下这行代码是否可行 */
         getpersonalData();/*获取个人信息*/
 
         admit()/*允许登陆用户修改和删除*/
@@ -175,7 +175,7 @@ function postRegister() {//注册
     if (postRequest.readyState == 4 && postRequest.status == 200) {
       console.log(postRequest.responseText)
       document.getElementById('registermsg').innerHTML = '注册成功';
-      window.location.href = "/loginpage"
+      window.location.href = "./loginpage"
 
     }
     else {
