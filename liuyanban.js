@@ -559,9 +559,3 @@ function finishPasswordChange(){/*完成修改密码*/
     document.getElementById("changePasswordPage").style.display = "none";
 
 }
-function trythings(){
-  document.getElementById('msgfontBox').style.display = "block"
-  document.getElementById('msg').innerText = "删除失败"
-  setTimeout(function(){document.getElementById('msgfontBox').style.display = "none"}, 10000)
-
-}
