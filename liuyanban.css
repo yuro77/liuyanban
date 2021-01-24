@@ -366,7 +366,7 @@
 .inputfive{
     height: 15vh;
     transform: all 0.5s;
-    
+    outline-style: none;
 }
 .finish{
     display: none;
