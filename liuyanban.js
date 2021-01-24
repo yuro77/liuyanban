@@ -24,16 +24,21 @@ function postLogin() {//用户登录
       password: password1,
     }
     postRequest.open("POST", BaseURL + '/login');
+    
     postRequest.send(JSON.stringify(postData1))
     console.log("登陆的账号和密码已发送")
+    
     postRequest.onreadystatechange = function () {
       if (postRequest.readyState == 4 && postRequest.status == 200) {
         console.log(postRequest.responseText)
         document.getElementById('loginmsg').innerHTML = '登陆成功';
-        document.getElementById('tipBox').style.display = "none";
+        
+        localStorage.setItem('username',username1)
         window.location.href = "./userpage.html";/*要检查一下这行代码是否可行 */
+       
+        
         getpersonalData();/*获取个人信息*/
-
+        
         admit()/*允许登陆用户修改和删除*/
 
       }
@@ -45,10 +50,13 @@ function postLogin() {//用户登录
 
 }
 //
-
+function toUserPage(){ document.getElementById('pageusername').innerText= localStorage.getItem('username');
+getpersonalData();/*获取个人信息*/
+         admit()/*允许登陆用户修改和删除*/}
 
 function admit() {//允许登陆用户修改和删除留言
-  var pageusername = document.getElementById('username3').innerHTML;
+  var pageusername = document.getElementById('pageusername').innerHTML;
+  var username = localStorage.getItem('username')
   var alreadyusername = new Array();
   getRequest.open('GET', BaseURL + '/');
   getRequest.send();
@@ -61,7 +69,7 @@ function admit() {//允许登陆用户修改和删除留言
     }
   }
   var d = 13/*目前的留言数*/
-  d = boxnumber;
+ // d = boxnumber;
   for (a = 0; a <= d; a++) {
     alreadyusername[a] = document.getElementsByClassName("displayBoxone")[a].children[0].children[0].children[0].children[0].innerText
   }/*遍历用户名*/
@@ -77,7 +85,7 @@ function admit() {//允许登陆用户修改和删除留言
 
   }
   /*管理员账号*/
-  if(postData1.username==""){
+  if(username=="管理员"){
     for(e=0;e <= d;e++){
       document.getElementsByClassName("displayBoxone")[b].children[0].children[0].children[3].children[0].style.visibility = "visible";
       document.getElementsByClassName("displayBoxone")[b].children[0].children[0].children[4].children[0].style.visibility = "visible"
@@ -98,8 +106,11 @@ function motifyText(id){/*修改功能 */
   var motifytext = document.getElementById(id).children[1].children[0].innerText;
   
   motifytext_={comment:motifytext}
-  postRequest.open("POST", BaseURL + '/update_comment');
+  postRequest.open("PUT", BaseURL + '/update_comment');
+  
   postRequest.send(JSON.stringify(motifytext_));
+  
+  
   postRequest.onreadystatechange = function () {
     if (postRequest.status == 200) {
       console.log(postRequest.responseText)
@@ -484,7 +495,7 @@ function personalDataChangeFinish() {/*完成个人信息和用户名修改*/
   //发送修改
   if (document.getElementById("username3").innerText != document.getElementById('pageusername')) {/*修改用户名*/
     var username_change = { username: document.getElementById("username3").innerText }
-    postRequest.open("POST", BaseURL + '/username');
+    postRequest.open("PUT", BaseURL + '/username');
     postRequest.send(JSON.stringify(username_change))
    
     postRequest.onreadystatechange = function () {
@@ -511,7 +522,7 @@ function personalDataChangeFinish() {/*完成个人信息和用户名修改*/
       age: age_,
       address: address_
     }
-    postRequest.open("POST", BaseURL + '/information');
+    postRequest.open("PUT", BaseURL + '/information');
     postRequest.send(JSON.stringify(personalDataChange))
     
     postRequest.onreadystatechange = function () {
@@ -544,7 +555,7 @@ function changePassword() {/*修改密码*/
 function finishPasswordChange(){/*完成修改密码*/
   var newPassword_= document.getElementById("newPassword").innerText
   var newPassword = {password:newPassword_}
-  postRequest.open("POST", BaseURL + '/password');
+  postRequest.open("PUT", BaseURL + '/password');
     postRequest.send(JSON.stringify(newPassword))
     
     postRequest.onreadystatechange = function () {
