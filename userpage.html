@@ -22,7 +22,7 @@
         <textarea cols="52" wrap="hard" class="inputfive" placeholder="限字" id="writeMytext"></textarea>
         
         <span class="header2" style="position: absolute;
-        top: 25vh;">发表图片</span>
+        top: 25vh;">发表图片</span><!--还没有完成-->
         <span class="header2" onclick="postmytext()" style="position: relative;
         top: 20vh;
         left: 25vw;">完成</span>
@@ -76,12 +76,12 @@
         </div>
         <input class="buttontwo" style="position: absolute;top: 35vh;left: 30vw;" type="button" value="完成" onclick="finishPasswordChange()">
     </div>
-    <div id="displayBox" class="displayBox" id="box0">
+    <div id="displayBox" class="displayBox" >
         <!--首页-->
-        <div class="displayBoxone">
+        <div class="displayBoxone" id="box0"> 
             <div class="usernameAndtime">
                 <ul style="list-style: none;">
-                    <li><span class="font name">小猫她姐</span></li>
+                    <li><span class="font name" onclick="checkPersonalData('box0')">小猫她姐</span></li>
                     <li><span class="font">12-1</span> </li>
                     <li><span class="font">17:48</span></li>
                     <li><span class="font" style="visibility: hidden;" onclick="motifyText('textarea0')">修改</span></li>
@@ -99,7 +99,7 @@
         <div class="displayBoxone" id="box1">
             <div class="usernameAndtime">
                 <ul style="list-style: none;">
-                    <li><span class="font">小猫她妹</span></li>
+                    <li><span class="font" onclick="checkPersonalData('box1')">小猫她妹</span></li>
                     <li><span class="font">12-1</span></li>
                     <li><span class="font">18:01</span></li>
                     <li><span class="font" style="visibility: hidden;" onclick="motifyText('textarea1')">修改</span></li>
@@ -116,7 +116,7 @@
         <div class="displayBoxone" id="box2">
             <div class="usernameAndtime">
                 <ul style="list-style: none;">
-                    <li><span class="font">小猫</span></li>
+                    <li><span class="font" onclick="checkPersonalData('box2')">小猫</span></li>
                     <li><span class="font">12-1</span></li>
                     <li><span class="font">18:37</span></li>
                     <li><span class="font" style="visibility: hidden;" onclick="motifyText('textarea2')">修改</span></li>
@@ -133,7 +133,7 @@
         <div class="displayBoxone" id="box3">
             <div class="usernameAndtime">
                 <ul style="list-style: none;">
-                    <li><span class="font">小猫她姐</span></li>
+                    <li><span class="font" onclick="checkPersonalData('box3')">小猫她姐</span></li>
                     <li><span class="font">12-1</span></li>
                     <li><span class="font">18:40</span></li>
                     <li><span class="font" style="visibility: hidden;" onclick="motifyText('textarea3')">修改</span></li>
@@ -151,7 +151,7 @@
         <div class="displayBoxone" id="box4">
             <div class="usernameAndtime">
                 <ul style="list-style: none;">
-                    <li><span class="font">小猫她妹</span></li>
+                    <li><span class="font" onclick="checkPersonalData('box4')">小猫她妹</span></li>
                     <li><span class="font">12-1</span></li>
                     <li><span class="font">18:41</span></li>
                     <li><span class="font" style="visibility: hidden;" onclick="motifyText('textarea4')">修改</span></li>
@@ -169,7 +169,7 @@
         <div class="displayBoxone" id="box5">
             <div class="usernameAndtime">
                 <ul style="list-style: none;">
-                    <li><span class="font">小猫她姐</span></li>
+                    <li><span class="font" onclick="checkPersonalData('box5')">小猫她姐</span></li>
                     <li><span class="font">12-1</span></li>
                     <li><span class="font">18:41</span></li>
                     <li><span class="font" style="visibility: hidden;" onclick="motifyText('textarea5')">修改</span></li>
@@ -186,7 +186,7 @@
         <div class="displayBoxone" id="box6">
             <div class="usernameAndtime">
                 <ul style="list-style: none;">
-                    <li><span class="font">糖果</span></li>
+                    <li><span class="font" onclick="checkPersonalData('box6')">不知名</span></li>
                     <li><span class="font">12-1</span></li>
                     <li><span class="font">18:42</span></li>
                     <li><span class="font" style="visibility: hidden;" onclick="motifyText('textarea6')">修改</span></li>
@@ -196,14 +196,14 @@
                 </ul>
             </div>
             <div class="displaytextBox"><textarea cols="52" wrap="hard" wrap="hard" class="displaytext" disabled="disabled"
-                    id='textarea6'>小猫不出来说两句？</textarea>
+                    id='textarea6'>哈哈哈</textarea>
             </div>
             
         </div><hr class="hr">
         <div class="displayBoxone" id="box7">
             <div class="usernameAndtime">
                 <ul style="list-style: none;">
-                    <li><span class="font">小猫</span></li>
+                    <li><span class="font" onclick="checkPersonalData('box7')">小猫</span></li>
                     <li><span class="font">12-1</span></li>
                     <li><span class="font">18:44</span></li>
                     <li><span class="font" style="visibility: hidden;" onclick="motifyText('textarea7')">修改</span></li>
@@ -222,7 +222,7 @@
         <div class="displayBoxone" id="box8">
             <div class="usernameAndtime">
                 <ul style="list-style: none;">
-                    <li><span class="font">大白兔</span></li>
+                    <li><span class="font" onclick="checkPersonalData('box8')">scuter1</span></li>
                     <li><span class="font">12-1</span></li>
                     <li><span class="font">18:45</span></li>
                     <li><span class="font" style="visibility: hidden;" onclick="motifyText('textarea8')">修改</span></li>
@@ -238,7 +238,7 @@
         <div class="displayBoxone" id="box9">
             <div class="usernameAndtime">
                 <ul style="list-style: none;">
-                    <li><span class="font">hg001</span></li>
+                    <li><span class="font" onclick="checkPersonalData('box9')">hg001</span></li>
                     <li><span class="font">12-1</span></li>
                     <li><span class="font">18:45</span></li>
                     <li><span class="font" style="visibility: hidden;" onclick="motifyText('textarea9')">修改</span></li>
@@ -254,7 +254,7 @@
         <div class="displayBoxone" id="box10">
             <div class="usernameAndtime">
                 <ul style="list-style: none;">
-                    <li><span class="font">小黑</span></li>
+                    <li><span class="font" onclick="checkPersonalData('box10')">小黑</span></li>
                     <li><span class="font">12-1</span></li>
                     <li><span class="font">18:49</span></li>
                     <li><span class="font" style="visibility: hidden;" onclick="motifyText('textarea10')">修改</span></li>
@@ -271,7 +271,7 @@
         <div class="displayBoxone" id="box11">
             <div class="usernameAndtime">
                 <ul style="list-style: none;">
-                    <li><span class="font">小猫她妹</span></li>
+                    <li><span class="font" onclick="checkPersonalData('box11')">小猫她妹</span></li>
                     <li><span class="font">12-1</span></li>
                     <li><span class="font">18:50</span></li>
                     <li><span class="font" style="visibility: hidden;" onclick="motifyText('textarea11')">修改</span></li>
@@ -289,7 +289,7 @@
         <div class="displayBoxone" id="box12">
             <div class="usernameAndtime">
                 <ul style="list-style: none;">
-                    <li><span class="font">小猫她妹</span></li>
+                    <li><span class="font" onclick="checkPersonalData('box12')">小猫她妹</span></li>
                     <li><span class="font">12-1</span></li>
                     <li><span class="font">18:50</span></li>
                     <li><span class="font" style="visibility: hidden;" onclick="motifyText('textarea12')">修改</span></li>
@@ -306,7 +306,7 @@
         <div class="displayBoxone" id="box13">
             <div class="usernameAndtime">
                 <ul style="list-style: none;">
-                    <li><span class="font">hg001</span></li>
+                    <li><span class="font" onclick="checkPersonalData('box13')">hg001</span></li>
                     <li><span class="font">12-1</span></li>
                     <li><span class="font">18:50</span></li>
                     <li><span class="font" style="visibility: hidden;" onclick="motifyText('textarea13')">修改</span></li>
