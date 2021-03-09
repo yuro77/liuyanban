@@ -7,7 +7,7 @@ else {
   postRequest = new ActiveXObject("Microsoft.XMLHTTP");
   getRequest = new ActiveXObject("Microsoft.XMLHTTP");
 }
-var BaseURL = 'http://8.129.238.142:5000';//查看是否有错误
+var BaseURL = 'http://8.129.238.142/djf';//查看是否有错误
 var boxnumber;//
 
 
