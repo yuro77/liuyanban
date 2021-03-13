@@ -672,6 +672,11 @@ function finishPasswordChange() {/*完成修改密码*/
       document.getElementById('msgfontBox').style.display = "block"
       document.getElementById('msg').innerText = "密码修改成功"
       setTimeout(function () { document.getElementById('msgfontBox').style.display = "none" }, 10000)
+      document.getElementById('personalDatabox').style.display = "block";
+      document.getElementById('displayBox').style.display = "none";
+      document.getElementById("postmytextBox").style.display = "none";
+      document.getElementById("changePasswordPage").style.display = "none";
+
     }
   }else {
       console.log(postRequest.responseText)
@@ -679,10 +684,7 @@ function finishPasswordChange() {/*完成修改密码*/
     }
 
   }
-  document.getElementById('personalDatabox').style.display = "block";
-  document.getElementById('displayBox').style.display = "none";
-  document.getElementById("postmytextBox").style.display = "none";
-  document.getElementById("changePasswordPage").style.display = "none";
+  
 
 }
 
@@ -711,6 +713,7 @@ function personalDataChangeFinish() {/*完成个人信息和用户名修改*/
         document.getElementById('personalDataChange').style.display = "block";
         document.getElementById('msgfontBox').style.display = "block"
         document.getElementById('msg').innerText = "用户名修改成功"
+        document.getElementById('pageusername').innerText=document.getElementById("username3").value
         setTimeout(function () { document.getElementById('msgfontBox').style.display = "none" }, 10000)
       }
       
