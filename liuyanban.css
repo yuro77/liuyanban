@@ -1,6 +1,7 @@
 .body{
     margin: 0;
     padding: 0;
+    overflow: scroll;
 }
 .backgroundpageone{
     background-repeat: no-repeat;
@@ -121,13 +122,14 @@
 
 .fieldset1{
     position: relative;
-    top: 3vh;
+    top: 8vh;
     left: 18vw;
     border-radius: 2vw;
     border-width: 1vw;
     width: 61.8vw;
-    height: 28vh;
+    height: 45vh;
     background-color: rgba(209, 160, 210, 0.35);
+   overflow: scroll;
 }
 .postmytextBox{
     position: relative;
@@ -171,7 +173,7 @@
     border-radius: 2vw;
     border-width: 1vw;
     width: 61.8vw;
-    height: 30vh;
+    height: 45vh;
     background-color: rgba(209, 160, 210, 0.35);
 }
 .messageboxone{
@@ -186,7 +188,7 @@
     width: 60vw;
     height: 5vh;
     position: absolute;
-    top: 78vh;
+    top: 45vh;
     left: 22vw;   
 }
 .pagetwoBoxone{

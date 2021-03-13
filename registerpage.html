@@ -12,34 +12,29 @@
     </div>
     <div class="fieldset2">
     <div class="registerboxone">
-        <label class="font" for="username2">用户名:</label>&nbsp;&nbsp;&nbsp;<input type="text" class="inputone"
+        <span class="font" for="username2">用户名:</span>&nbsp;&nbsp;&nbsp;<input type="text" class="inputone"
             id="username2" placeholder="如小明" name="username2">
     </div>
     <div class="registerboxtwo">
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <ul style="list-style: none;">
         <span class="font">密码:</span>&nbsp;&nbsp;&nbsp;
-        <input type="password" class="inputone" id="password2">
+        <input type="password" class="inputone" id="password2"></ul>
     </div>
     <div class="registerboxthree">
         <ul style="list-style: none;">
-        <li><span class="font">性别:</span>&nbsp;&nbsp;&nbsp;
+        <li ><span class="font">性别:</span>&nbsp;&nbsp;&nbsp;
         <input type="text" class="inputtwo" id="sex"></li>
-        <li><span class="font">年龄:</span>&nbsp;&nbsp;&nbsp;
+        <li style="margin-top: 3vw;"><span class="font">年龄:</span>&nbsp;&nbsp;&nbsp;
         <input type="text" class="inputtwo" id="age"></li>
-        <li><span class="font">地址:</span>&nbsp;&nbsp;&nbsp;
-        <input type="text" class="inputone" id="address"></li></ul>
+        <li style="margin-top: 3vw;"><span class="font">地址:</span>&nbsp;&nbsp;&nbsp;
+        <input type="text" class="inputone" id="address"></li>
+        <li style="margin-top: 8vw;list-style: none;">
+            <input class="buttontwo" type="button" value="注册" onclick="postRegister()"></li></ul>
     </div>
-    <div class="pagetwoBoxtwo"><input class="buttontwo" type="button" value="注册" onclick="postRegister()"></div>
-    </div>
-<div class="messageboxone">
-    <p id="loginmsg" class="msgfont" style="
-    word-wrap: break-word;
-    word-break:normal;
-"></p>
-</div>
-<div class="messageboxtwo">
+    
+   <div class="messageboxtwo">
     <p id="registermsg" class="msgfont"></p>
-</div>
+   </div>
     
 </body>
 <script src="liuyanban.js"></script>

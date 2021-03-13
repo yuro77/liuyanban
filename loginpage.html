@@ -7,24 +7,25 @@
     <link href="liuyanban.css" rel="stylesheet" type="text/css">
 </head>
 
-<body class="body">
+<body class="body" >
+    
     <div class="header"><span class="header1">留言板</span>
     </div>
-    <div class="fieldset1">
+    <div class="fieldset1" id="fieldset1" onload="Height()">
         <div class="loginboxone">
             <label class="font" for="username1">用户名:</label>&nbsp;&nbsp;&nbsp;<input type="text" class="inputone"
-                id="username1" placeholder="小明" name="username1">
+                id="username1" placeholder="小明" name="username1" >
         </div>
         <div class="loginboxtwo">
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <span class="font">密码:</span>&nbsp;&nbsp;&nbsp;
-            <input type="password" class="inputone" id="password1">
+            <input type="password" class="inputone" id="password1" >
         </div>
         <div class="messageboxone">
             <p id="loginmsg" class="msgfont"></p>
         </div>
 
-        <div class="pagetwoBoxone"><input class="buttontwo" type="button" value="登陆" onclick="postLogin()"></div>
+        <div class="pagetwoBoxone"><input class="buttontwo" type="button" value="登陆" id="login" onclick="postLogin()"></div>
     </div>
 
 </body>

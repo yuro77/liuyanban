@@ -10,6 +10,24 @@ else {
 var BaseURL = 'http://8.129.238.142/djf';//查看是否有错误
 var boxnumber;//
 
+function Height(){
+  //var height = document.getElementById('body').clientHeight;
+  //localStorage.setItem('height',height)
+  
+  localStorage.setItem('position',JSON.stringify(document.getElementById('login').getBoundingClientRect()))
+}
+/*function Height1(){//手机适配问题
+  var newHeight=document.getElementById('fieldset1').style.clientHeight
+  var height=localStorage.getItem('fieldset1')
+  if (newHeight<height){
+   var newposition = document.getElementById('login').getBoundingClientRect()
+   var oldposition = JSON.parse(localStorage.getItem('position'))
+   if(newposition!=oldposition){
+     
+    document.getElementById('fieldset1').style.height="28"+'vh'
+  }
+  else{document.getElementById('fieldset1').style.height="45"+'vh'}
+}*/
 
 
 function postLogin() {//用户登录
@@ -139,26 +157,17 @@ function motifyText(event) {/*修改功能 */
       }
 }
 //
-for(u=0;u<boxnumber1;u++){//其余不能修改
-  boxNumber='box'+JSON.stringify(u)
-  document.getElementById(boxNumber).children[0].children[0].children[3].setAttribute('disabled','disabled')
-  document.getElementById(boxNumber).children[0].children[0].children[4].setAttribute('disabled','disabled')
-}
+
 }
 
 
 function finishmotifyText(event) {/*修改后的发送 */
   var x = event.target
   var boxnumber1=Number( localStorage.getItem('box_number'))-1
-  for(u=0;u<boxnumber1;u++){//其余可以修改
-    boxNumber='box'+JSON.stringify(u)
-    document.getElementById(boxNumber).children[0].children[0].children[3].removeAttribute('disabled')
-  document.getElementById(boxNumber).children[0].children[0].children[4].removeAttribute('disabled')
-
-  }
+  
   /*把修改发送*/
   var motifytext = x.parentElement.parentElement.parentElement.nextElementSibling.children[0].value;
-  
+  x.parentElement.parentElement.parentElement.nextElementSibling.children[0].setAttribute('disabled','disabled')
   idNumber_ = Number(localStorage.getItem('commentID'))
 
   motifytext_ = { id: idNumber_, comment: motifytext }
@@ -178,9 +187,12 @@ function finishmotifyText(event) {/*修改后的发送 */
         var time1 = new Date()
         var month1 = time1.getMonth() + 1; var date1 = time1.getDate(); var hour1 = time1.getHours();
         var minute1 = time1.getMinutes();
-        x.parentElement.previousElementSibling.previousElementSibling.previousElementSibling.innerText = 
+        
+        x.parentElement.previousElementSibling.previousElementSibling.previousElementSibling.children[0].innerText = 
         "上次修改时间:" + JSON.stringify(month1) + "-" + JSON.stringify(date1) + "  "
           + JSON.stringify(hour1) + ":" + JSON.stringify(minute1)
+        
+          x.parentElement.previousElementSibling.previousElementSibling.children[0].style.visibility="visible"
         document.getElementById('msgfontBox').style.display = "block"
         document.getElementById('msg').innerText = "修改成功"
         setTimeout(function () { document.getElementById('msgfontBox').style.display = "none" }, 10000)
@@ -284,7 +296,7 @@ function postRegister() {//注册
     if (postRequest.readyState == 4 && postRequest.status == 200) {
       console.log(postRequest.responseText)
       document.getElementById('registermsg').innerHTML = '注册成功';
-      window.location.href = "http://8.129.238.142:5000/static/loginpage.html"
+      window.location.href = "http://8.129.238.142/djf/static/loginpage.html"
 
     }
     else {
@@ -498,8 +510,8 @@ function postmytext() {/*把要发表的留言发送*/
     if (getRequest.readyState == 4) {
       if (getRequest.status == 200) {
 
-        JSON.parse(getRequest.responseText)
-        boxnumber = getRequest.responseText.length
+        
+        boxnumber =JSON.parse(getRequest.responseText).length
 
 
         var postedText = document.getElementById('writeMytext').value
@@ -535,14 +547,14 @@ function postmytext() {/*把要发表的留言发送*/
             newTextBoxoneUL.className = "the-ul";
             newTextBoxone.appendChild(newTextBoxoneUL);
 
-            var newTextBoxoneUL_li_1 = document.createElement('li');
+            var newTextBoxoneUL_li_1 = document.createElement('li');//名字
             newTextBoxoneUL.appendChild(newTextBoxoneUL_li_1)
             var newTextBoxoneUL_li_font = document.createElement('span')
             newTextBoxoneUL_li_font.className = "font"
             newTextBoxoneUL_li_1.appendChild(newTextBoxoneUL_li_font)
             newTextBoxoneUL_li_1.children[0].innerText = document.getElementById("pageusername").innerText/*用户名*/
 
-            var newTextBoxoneUL_li_2 = document.createElement('li');
+            var newTextBoxoneUL_li_2 = document.createElement('li');//月日
             newTextBoxoneUL.appendChild(newTextBoxoneUL_li_2)
             var newTextBoxoneUL_li_font_ = document.createElement('span')
             newTextBoxoneUL_li_font_.className = "font"
@@ -553,41 +565,51 @@ function postmytext() {/*把要发表的留言发送*/
             var minute = time.getMinutes();
             newTextBoxoneUL_li_2.children[0].innerText = JSON.stringify(month) + "-" + JSON.stringify(date)/*月+日*/
 
-            var newTextBoxoneUL_li_3 = document.createElement('li');
+            var newTextBoxoneUL_li_3 = document.createElement('li');//时分
             newTextBoxoneUL.appendChild(newTextBoxoneUL_li_3)
             var newTextBoxoneUL_li_font__ = document.createElement('span')
             newTextBoxoneUL_li_font__.className = "font"
             newTextBoxoneUL_li_3.appendChild(newTextBoxoneUL_li_font__)
             newTextBoxoneUL_li_3.children[0].innerText = JSON.stringify(hour) + ":" + JSON.stringify(minute)/*时+分*/
 
-            var newTextBoxoneUL_li_4 = document.createElement('li');
+            var newTextBoxoneUL_li_4 = document.createElement('li');//最新上传
             newTextBoxoneUL.appendChild(newTextBoxoneUL_li_4)
             var newTextBoxoneUL_li_font1 = document.createElement('span')
-            newTextBoxoneUL_li_font1.className = "font1";
+            newTextBoxoneUL_li_font1.className = "font";
+            newTextBoxoneUL_li_4.appendChild(newTextBoxoneUL_li_font1)
+            newTextBoxoneUL_li_4.children[0].innerText="最新上传"
+
             var boxnumber_ = Number(boxnumber)
             boxnumber_ = boxnumber_ + 1
             textareaNumber = 'textarea' + JSON.stringify(boxnumber_)
-            newTextBoxoneUL_li_4.appendChild(newTextBoxoneUL_li_font1)
-            document.getElementById(newTextBox.id).children[0].children[0].children[4].children[0].onclick = function () { motifyText(event) }
-            newTextBoxoneUL_li_font1.innerText = "修改"/*修改*/
+            
+            
 
-            var newTextBoxoneUL_li_5 = document.createElement('li');
+            var newTextBoxoneUL_li_5 = document.createElement('li');//修改
             newTextBoxoneUL.appendChild(newTextBoxoneUL_li_5)
             var newTextBoxoneUL_li_font2 = document.createElement('span');
-            newTextBoxoneUL_li_font2.className = "font1";
+            newTextBoxoneUL_li_font2.className = "font";
             newTextBoxoneUL_li_5.appendChild(newTextBoxoneUL_li_font2)
-            document.getElementById(newTextBox.id).children[0].children[0].children[5].children[0].onclick = function () { deleteText(event) }
-            newTextBoxoneUL_li_font2.innerText = "删除"/*删除*/
+            newTextBoxoneUL_li_font2.innerText="修改"
+            newTextBoxoneUL_li_font2.onclick = function () { motifyText(event) }
+            /*修改*/
 
-
-
-            var newTextBoxoneUL_li_6 = document.createElement('li');
+            var newTextBoxoneUL_li_6 = document.createElement('li');//删除
             newTextBoxoneUL.appendChild(newTextBoxoneUL_li_6)
             var newTextBoxoneUL_li_font3 = document.createElement('span');
-            newTextBoxoneUL_li_font3.className = "font1";
+            newTextBoxoneUL_li_font3.className = "font";
             newTextBoxoneUL_li_6.appendChild(newTextBoxoneUL_li_font3)
+            
+            newTextBoxoneUL_li_font3.innerText = "删除"/*删除*/
+            document.getElementById(newTextBox.id).children[0].children[0].children[5].children[0].onclick = function () { deleteText(event) }
 
-            newTextBoxoneUL_li_font3.innerText = "完成"/*完成*/
+
+            var newTextBoxoneUL_li_7 = document.createElement('li');//完成
+            newTextBoxoneUL.appendChild(newTextBoxoneUL_li_7)
+            var newTextBoxoneUL_li_font4 = document.createElement('span');
+            newTextBoxoneUL_li_font4.className = "font1";
+            newTextBoxoneUL_li_7.appendChild(newTextBoxoneUL_li_font4)
+            newTextBoxoneUL_li_font4.innerText="完成"
             document.getElementById(newTextBox.id).children[0].children[0].children[6].children[0].onclick = function () { finishmotifyText(event) }
 
             var newTextTwoTextarea = document.createElement('textarea')
@@ -601,6 +623,7 @@ function postmytext() {/*把要发表的留言发送*/
             document.getElementById('msgfontBox').style.display = "block"
             document.getElementById('msg').innerText = "留言发表成功"
             setTimeout(function () { document.getElementById('msgfontBox').style.display = "none" }, 10000)
+            document.getElementById('writeMytext').value="";
 
 
           }
@@ -637,23 +660,22 @@ function changePassword() {/*修改密码*/
   }
 }
 function finishPasswordChange() {/*完成修改密码*/
-  var newPassword_ = document.getElementById("newPassword").innerText
+  var newPassword_ = document.getElementById("newPassword").value
   var newPassword = { password: newPassword_ }
   postRequest.open("PUT", BaseURL + '/password');
   postRequest.send(JSON.stringify(newPassword))
 
   postRequest.onreadystatechange = function () {
-    if (postRequest.readyState == 4 && postRequest.status == 200) {
+    if (postRequest.readyState == 4 ) {
+      if( postRequest.status == 200){
       console.log(postRequest.responseText)
       document.getElementById('msgfontBox').style.display = "block"
       document.getElementById('msg').innerText = "密码修改成功"
       setTimeout(function () { document.getElementById('msgfontBox').style.display = "none" }, 10000)
     }
-    else {
+  }else {
       console.log(postRequest.responseText)
-      document.getElementById('msgfontBox').style.display = "block"
-      document.getElementById('msg').innerText = "密码修改失败"
-      setTimeout(function () { document.getElementById('msgfontBox').style.display = "none" }, 10000)
+      
     }
 
   }
@@ -678,11 +700,12 @@ function personalDataChangeFinish() {/*完成个人信息和用户名修改*/
   //发送修改
   if (document.getElementById("username3").value != document.getElementById('pageusername').innerText) {/*修改用户名*/
     var username_change = { username: document.getElementById("username3").value }
+   console.log(username_change)
     postRequest.open("PUT", BaseURL + '/username');
     postRequest.send(JSON.stringify(username_change))
 
     postRequest.onreadystatechange = function () {
-      if (postRequest.readyState == 4 && postRequest.status == 200) {
+      if (postRequest.readyState == 4 ){if( postRequest.status == 200) {
         console.log(postRequest.responseText)
         document.getElementById("personalDataChangeFinish").style.display = "none";
         document.getElementById('personalDataChange').style.display = "block";
@@ -690,14 +713,11 @@ function personalDataChangeFinish() {/*完成个人信息和用户名修改*/
         document.getElementById('msg').innerText = "用户名修改成功"
         setTimeout(function () { document.getElementById('msgfontBox').style.display = "none" }, 10000)
       }
-      else {
-        document.getElementById('msgfontBox').style.display = "block"
-        document.getElementById('msg').innerText = "用户名修改失败"
-        setTimeout(function () { document.getElementById('msgfontBox').style.display = "none" }, 10000)
+      
 
-      }
+      }}
     }
-  }
+  
   else {/*修改个人信息*/
     var sex_ = document.getElementById("sex1").value
     var age_ = document.getElementById('age1').value
@@ -711,7 +731,7 @@ function personalDataChangeFinish() {/*完成个人信息和用户名修改*/
     postRequest.send(JSON.stringify(personalDataChange))
 
     postRequest.onreadystatechange = function () {
-      if (postRequest.readyState == 4 && postRequest.status == 200) {
+      if (postRequest.readyState == 4 ){if( postRequest.status == 200) {
         console.log(postRequest.responseText);
         document.getElementById("personalDataChangeFinish").style.display = "none";
         document.getElementById('personalDataChange').style.display = "block";
@@ -722,14 +742,12 @@ function personalDataChangeFinish() {/*完成个人信息和用户名修改*/
       }
       else {
         console.log(postRequest.responseText)
-        document.getElementById('msgfontBox').style.display = "block"
-        document.getElementById('msg').innerText = "个人信息修改失败"
-        setTimeout(function () { document.getElementById('msgfontBox').style.display = "none" }, 10000)
+        
       }
 
     }
   }
-}
+}}
 function checkPersonalData(id) {
   var username_ = document.getElementById(id).children[0].children[0].children[0].children[0].innerText
   var sendData = { username: username_ }
